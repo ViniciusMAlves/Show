@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 public class Pricipal extends javax.swing.JFrame {
      ArrayList<Aluno> alunos = new ArrayList<>();
      ArrayList<Nota> notas = new ArrayList<>();
+     ArrayList<TipoAvaliacao> tipos = new ArrayList<>();
      TipoAvaliacao tipo = null;
      float calculo;
      
@@ -339,10 +340,10 @@ public class Pricipal extends javax.swing.JFrame {
          throw new RuntimeException();
      }
         
-       
+       tipos.add(tipo);
        alunos.add( new Aluno(nome, matricula)  );
        notas.add(new Nota(disciplina, nota));
-       JOptionPane.showMessageDialog(this, alunos.toString()+"\n"+notas.toString()+"\n"+ tipo.toString()); 
+       JOptionPane.showMessageDialog(this, alunos.toString()+"\n"+notas.toString()+"\n"+ tipos.toString()); 
     }//GEN-LAST:event_jBCadastrarActionPerformed
 
     private void jCBDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBDisciplinaActionPerformed
