@@ -330,7 +330,7 @@ public class Pricipal extends javax.swing.JFrame {
         int matricula;
         float nota;
      try{   
-        matricula =Integer.parseInt(jTFMatricula.getText() );
+        matricula =Integer.parseInt(jTFMatricula.getText() ); 
         nome = jTFNome.getText();
         disciplina = jTFNomeDisciplica.getText();
         nota=calculo;
