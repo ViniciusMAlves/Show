@@ -17,12 +17,12 @@ import java.util.List;
 public class Aluno {
     private String nome;
     private int matricula;
-    private List<Nota> notas;
+    private ArrayList<Nota> notas = new ArrayList<>();
 
     public Aluno(String nome, int matricula) {
         this.nome = nome;
         this.matricula = matricula;
-        notas = new ArrayList<>();
+        
     }
 
     
@@ -44,13 +44,11 @@ public class Aluno {
         
     }
 
-    public List<Nota> getNotas() {
-        return notas;
-    }
-
-    public void setNotas(List<Nota> notas) {
+    public void setNotas(ArrayList<Nota> notas) {
         this.notas = notas;
     }
+
+   
 
     public Aluno setNotas(float n1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

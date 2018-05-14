@@ -17,8 +17,10 @@ import javax.swing.JOptionPane;
  */
 public class Pricipal extends javax.swing.JFrame {
      ArrayList<Aluno> alunos = new ArrayList<>();
-    
+     ArrayList<Nota> notas = new ArrayList<>();
+     TipoAvaliacao tipo = null;
      float calculo;
+     
    
     
     /**
@@ -301,6 +303,25 @@ public class Pricipal extends javax.swing.JFrame {
         calculo=(n1+n2+n3+n4)/4;
        
         JOptionPane.showMessageDialog(this, calculo);
+        
+        
+        switch(jCBDisciplina.getSelectedIndex()){
+            case 1: {
+             tipo = TipoAvaliacao.prova;
+             break;
+            }
+            case 2: {
+                tipo = TipoAvaliacao.trabalho;
+                break;
+            }
+            case 3:{
+                tipo = TipoAvaliacao.seminario;
+                break;
+            }
+        }
+        
+        
+        
     }//GEN-LAST:event_jBCalcularActionPerformed
 
     private void jBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarActionPerformed
@@ -308,21 +329,24 @@ public class Pricipal extends javax.swing.JFrame {
         String nome,disciplina;
         int matricula;
         float nota;
-        
+     try{   
         matricula =Integer.parseInt(jTFMatricula.getText() );
         nome = jTFNome.getText();
         disciplina = jTFNomeDisciplica.getText();
         nota=calculo;
+     } catch(NumberFormatException nfe){
+         JOptionPane.showMessageDialog(this, "Voce digitou um caracter errado !!!");
+         throw new RuntimeException();
+     }
         
-       Aluno a = new Aluno(nome, matricula);
-       Nota n = new Nota(disciplina, nota);
-      //alunos.get(alunos.size()-1).getNotas().add(new Nota(disciplina, nota)); 
-        
-       JOptionPane.showMessageDialog(this, a.toString()+"\n"+n.toString()); 
+       
+       alunos.add( new Aluno(nome, matricula)  );
+       notas.add(new Nota(disciplina, nota));
+       JOptionPane.showMessageDialog(this, alunos.toString()+"\n"+notas.toString()+"\n"+ tipo.toString()); 
     }//GEN-LAST:event_jBCadastrarActionPerformed
 
     private void jCBDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBDisciplinaActionPerformed
-        new javax.swing.DefaultComboBoxModel(TipoAvaliacao.values());
+        new javax.swing.DefaultComboBoxModel(TipoAvaliacao.values());        
     }//GEN-LAST:event_jCBDisciplinaActionPerformed
 
     /**
