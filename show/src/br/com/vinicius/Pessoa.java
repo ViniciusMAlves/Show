@@ -307,21 +307,22 @@ public class Pessoa extends javax.swing.JFrame {
     }//GEN-LAST:event_jRBJuradoActionPerformed
 
     private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
-        String nome,sexo;
+        String nome;
+        char sexo;
         int codigo;
         Date dataNascimento;
         
         nome=jTFNome.getText();
         codigo=Integer.parseInt(jTFId.getText());
-        //dataNascimento= sdp.parse(jTFDataNascimento.getText());
+        dataNascimento= sdp.parse(Integer.parseInt(jTFDataNascimento.getText()) );
         if (jRBMascolino.isSelected()) {
-            sexo=jRBMascolino.getText();
+            sexo='m';
         }else{
             if (jRBfeminino.isSelected()) {
-              sexo=jRBfeminino.getText();
+              sexo='f';
             }else{
                 if (jRBOutro.isSelected()) {
-                    sexo=jRBOutro.getText();
+                    sexo='o';
                 }
             }
         }
