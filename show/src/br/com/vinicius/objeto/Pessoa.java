@@ -5,6 +5,7 @@
  */
 package br.com.vinicius.objeto;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -19,11 +20,11 @@ public abstract class Pessoa {
     private int idade;
     private char sexo;
 
-    public Pessoa(String nome, int id, Date dataNascimento, int idade, char sexo) {
+    public Pessoa(String nome, int id, Date dataNascimento,  char sexo) {
         this.nome = nome;
         this.id = id;
         this.dataNascimento = dataNascimento;
-        this.idade = idade;
+        this.idade = this.calculoIdade(dataNascimento);
         this.sexo = sexo;
     }
 
@@ -72,5 +73,25 @@ public abstract class Pessoa {
         return "Pessoa{" + "nome=" + nome + ", id=" + id + ", dataNascimento=" + dataNascimento + ", idade=" + idade + ", sexo=" + sexo + '}';
     }
     
+    public static int calculoIdade(java.util.Date dataNasc ){
+       Calendar dataNascimento = Calendar.getInstance();
+       dataNascimento.setTime(dataNasc);
+       Calendar hoje = Calendar.getInstance();
+       
+       int idade = hoje.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR); 
+
+    if (hoje.get(Calendar.MONTH) < dataNascimento.get(Calendar.MONTH)) {
+      idade--;  
+    } 
+    else 
+    { 
+        if (hoje.get(Calendar.MONTH) == dataNascimento.get(Calendar.MONTH) && hoje.get(Calendar.DAY_OF_MONTH) < dataNascimento.get(Calendar.DAY_OF_MONTH)) {
+            idade--; 
+        }
+    }
+
+    return idade;
+        
+    }
     
 }

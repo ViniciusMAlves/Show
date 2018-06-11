@@ -99,17 +99,17 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
-        Pessoa cadastro = new Pessoa();
+        JRPessoa cadastro = new JRPessoa();
         cadastro.setVisible(true);
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
 
     private void jBtnRequisitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRequisitosActionPerformed
-       Requisitos requisito = new Requisitos();
+       JRRequisitos requisito = new JRRequisitos();
        requisito.setVisible(true);
     }//GEN-LAST:event_jBtnRequisitosActionPerformed
 
     private void jBtnApresentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnApresentacaoActionPerformed
-        Apresentacao apresen = new Apresentacao();
+        JRApresentacao apresen = new JRApresentacao();
         apresen.setVisible(true);
     }//GEN-LAST:event_jBtnApresentacaoActionPerformed
 

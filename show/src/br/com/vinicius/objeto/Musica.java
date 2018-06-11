@@ -14,9 +14,9 @@ public class Musica {
     private String Artista;
     private String musica;
     private String genero;
-    private int tempo;
+    private float tempo;
 
-    public Musica(String Artista, String musica, String genero, int tempo) {
+    public Musica(String Artista, String musica, String genero, float tempo) {
         this.Artista = Artista;
         this.musica = musica;
         this.genero = genero;
@@ -47,11 +47,11 @@ public class Musica {
         this.genero = genero;
     }
 
-    public int getTempo() {
+    public float getTempo() {
         return tempo;
     }
 
-    public void setTempo(int tempo) {
+    public void setTempo(float tempo) {
         this.tempo = tempo;
     }
 

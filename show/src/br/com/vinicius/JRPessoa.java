@@ -5,15 +5,22 @@
  */
 package br.com.vinicius;
 
+import Singleton.SCandidato;
+import Singleton.SJurado;
+import br.com.vinicius.objeto.Candidato;
+import br.com.vinicius.objeto.Jurado;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.chart.PieChart.Data;
 
 /**
  *
  * @author SATC
  */
-public class Pessoa extends javax.swing.JFrame {
+public class JRPessoa extends javax.swing.JFrame {
     SimpleDateFormat sdp = new SimpleDateFormat("dd/MM/yyyy");
 
     void desabilitarJurado() {
@@ -39,7 +46,7 @@ public class Pessoa extends javax.swing.JFrame {
     /**
      * Creates new form Pessoa
      */
-    public Pessoa() {
+    public JRPessoa() {
         initComponents();
         desabilitarJurado();
         desabilitarCandidato();
@@ -307,14 +314,20 @@ public class Pessoa extends javax.swing.JFrame {
     }//GEN-LAST:event_jRBJuradoActionPerformed
 
     private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
-        String nome;
-        char sexo;
+        String nome,nascionalidade,proficao,especialidade;
+        char sexo = ' ';
         int codigo;
-        Date dataNascimento;
+        Date dataNascimento = null;
         
         nome=jTFNome.getText();
         codigo=Integer.parseInt(jTFId.getText());
-        dataNascimento= sdp.parse(Integer.parseInt(jTFDataNascimento.getText()) );
+        
+        try {
+            dataNascimento= sdp.parse(jTFDataNascimento.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(JRPessoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         if (jRBMascolino.isSelected()) {
             sexo='m';
         }else{
@@ -324,6 +337,20 @@ public class Pessoa extends javax.swing.JFrame {
                 if (jRBOutro.isSelected()) {
                     sexo='o';
                 }
+            }
+        }
+        
+        if (jRBCandidato.isSelected()) {
+            nascionalidade=jTFNacionalidade.getText();
+            proficao=jTFProfissao.getText();
+            
+            Candidato c = new Candidato(nascionalidade, proficao, nome, WIDTH, dataNascimento, WIDTH, sexo);
+            SCandidato.getInstance().getCandidato().add(c);
+        }else{
+            if (jRBJurado.isSelected()) {
+                especialidade=jTFEspecialisacao.getText();
+                Jurado j = new Jurado(especialidade, nome, WIDTH, dataNascimento, WIDTH, sexo);
+                SJurado.getInstance().getCandidato().add(j);
             }
         }
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
@@ -345,20 +372,21 @@ public class Pessoa extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Pessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JRPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Pessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JRPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Pessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JRPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Pessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JRPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pessoa().setVisible(true);
+                new JRPessoa().setVisible(true);
             }
         });
     }

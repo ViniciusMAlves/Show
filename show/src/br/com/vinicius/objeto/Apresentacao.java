@@ -10,31 +10,32 @@ package br.com.vinicius.objeto;
  * @author SATC
  */
 public class Apresentacao {
-    private Boolean autoral;
-    private Boolean adaptado;
+    private String autoral;
+    private String adaptado;
     private float media;
     private Candidato candidato;
     private Musica musica;
 
-    public Apresentacao(Boolean autoral, Boolean adaptado, float media) {
+    public Apresentacao(String autoral, String adaptado, float media) {
         this.autoral = autoral;
         this.adaptado = adaptado;
         this.media = media;
+        
     }
 
-    public Boolean getAutoral() {
+    public String getAutoral() {
         return autoral;
     }
 
-    public void setAutoral(Boolean autoral) {
+    public void setAutoral(String autoral) {
         this.autoral = autoral;
     }
 
-    public Boolean getAdaptado() {
+    public String getAdaptado() {
         return adaptado;
     }
 
-    public void setAdaptado(Boolean adaptado) {
+    public void setAdaptado(String adaptado) {
         this.adaptado = adaptado;
     }
 

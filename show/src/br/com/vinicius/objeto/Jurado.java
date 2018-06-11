@@ -16,7 +16,7 @@ public class Jurado extends Pessoa{
     private String especialidade;
 
     public Jurado(String especialidade, String nome, int id, Date dataNascimento, int idade, char sexo) {
-        super(nome, id, dataNascimento, idade, sexo);
+        super(nome, id, dataNascimento, sexo);
         this.especialidade = especialidade;
     }
 

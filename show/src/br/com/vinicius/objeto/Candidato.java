@@ -16,7 +16,7 @@ public class Candidato extends Pessoa{
     private String profissao;
 
     public Candidato(String Nascionalidade, String profissao, String nome, int id, Date dataNascimento, int idade, char sexo) {
-        super(nome, id, dataNascimento, idade, sexo);
+        super(nome, id, dataNascimento, sexo);
         this.Nascionalidade = Nascionalidade;
         this.profissao = profissao;
     }
