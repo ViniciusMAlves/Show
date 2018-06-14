@@ -38,6 +38,7 @@ public class JRRequisitos extends javax.swing.JFrame {
         jTFNota = new javax.swing.JTextField();
         jTFStatus = new javax.swing.JTextField();
         jBtnCadastrar = new javax.swing.JButton();
+        jBtnSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +61,13 @@ public class JRRequisitos extends javax.swing.JFrame {
             }
         });
 
+        jBtnSair.setText("Sair");
+        jBtnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSairActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,7 +78,9 @@ public class JRRequisitos extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jTFStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBtnCadastrar))
+                        .addComponent(jBtnCadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtnSair))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -112,6 +122,7 @@ public class JRRequisitos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTFStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnSair)
                     .addComponent(jBtnCadastrar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -121,12 +132,16 @@ public class JRRequisitos extends javax.swing.JFrame {
 
     private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
         String requisitos = jTFRequisitos.getText();
-        int nota =Integer.parseInt( jTFNota.getText());
+        int nota = Integer.parseInt(jTFNota.getText());
         char status = jTFStatus.getText().charAt(0);
         
         Requisito r = new Requisito(requisitos, nota, status);
         SRequisito.getInstance().getRequisito().add(r);
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
+
+    private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_jBtnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,6 +183,7 @@ public class JRRequisitos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCadastrar;
+    private javax.swing.JButton jBtnSair;
     private javax.swing.JLabel jLblNota;
     private javax.swing.JLabel jLblRequisitos;
     private javax.swing.JLabel jLblRequisoto;

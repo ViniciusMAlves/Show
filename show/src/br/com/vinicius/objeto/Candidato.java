@@ -39,7 +39,7 @@ public class Candidato extends Pessoa{
 
     @Override
     public String toString() {
-        return "Candidato{" + "Nascionalidade=" + Nascionalidade + ", profissao=" + profissao + '}';
+        return super.toString() + "Candidato : " + "Nascionalidade=" + Nascionalidade + "\n, profissao=" + profissao ;
     }
     
     

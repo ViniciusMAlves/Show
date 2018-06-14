@@ -15,32 +15,40 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.chart.PieChart.Data;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author SATC
  */
 public class JRPessoa extends javax.swing.JFrame {
+
     SimpleDateFormat sdp = new SimpleDateFormat("dd/MM/yyyy");
+    Candidato c;
+    Jurado j;
 
     void desabilitarJurado() {
 
         this.jTFEspecialisacao.setEnabled(false);
+      
     }
 
     void abilitarJurado() {
 
         this.jTFEspecialisacao.setEnabled(true);
+        
     }
 
     void desabilitarCandidato() {
         this.jTFNacionalidade.setEnabled(false);
         this.jTFProfissao.setEnabled(false);
+       
     }
 
     void abilitarCandidato() {
-        this.jTFNacionalidade.setEnabled(true);
+       this.jTFNacionalidade.setEnabled(true);
         this.jTFProfissao.setEnabled(true);
+       
     }
 
     /**
@@ -86,6 +94,8 @@ public class JRPessoa extends javax.swing.JFrame {
         jRBMascolino = new javax.swing.JRadioButton();
         jRBfeminino = new javax.swing.JRadioButton();
         jRBOutro = new javax.swing.JRadioButton();
+        jBtnSair = new javax.swing.JButton();
+        jBtnCansuta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -216,6 +226,20 @@ public class JRPessoa extends javax.swing.JFrame {
 
         jRBOutro.setText("Outros");
 
+        jBtnSair.setText("Sair");
+        jBtnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSairActionPerformed(evt);
+            }
+        });
+
+        jBtnCansuta.setText("Consutar");
+        jBtnCansuta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCansutaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -235,7 +259,12 @@ public class JRPessoa extends javax.swing.JFrame {
                             .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTFDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTFId, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBtnCadastrar)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jBtnCadastrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jBtnCansuta)
+                                .addGap(15, 15, 15)
+                                .addComponent(jBtnSair))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jRBMascolino)
                                 .addGap(18, 18, 18)
@@ -286,7 +315,10 @@ public class JRPessoa extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jRBOutro)
                         .addGap(14, 14, 14)
-                        .addComponent(jBtnCadastrar))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jBtnCadastrar)
+                            .addComponent(jBtnSair)
+                            .addComponent(jBtnCansuta)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jPnlCadidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -314,46 +346,60 @@ public class JRPessoa extends javax.swing.JFrame {
     }//GEN-LAST:event_jRBJuradoActionPerformed
 
     private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
-        String nome,nascionalidade,proficao,especialidade;
+        String nome, nascionalidade, proficao, especialidade;
         char sexo = ' ';
         int codigo;
         Date dataNascimento = null;
-        
-        nome=jTFNome.getText();
-        codigo=Integer.parseInt(jTFId.getText());
-        
+
+        nome = jTFNome.getText();
+        codigo = Integer.parseInt(jTFId.getText());
+
         try {
-            dataNascimento= sdp.parse(jTFDataNascimento.getText());
+            dataNascimento = sdp.parse(jTFDataNascimento.getText());
         } catch (ParseException ex) {
             Logger.getLogger(JRPessoa.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         if (jRBMascolino.isSelected()) {
-            sexo='m';
-        }else{
+            sexo = 'm';
+        } else {
             if (jRBfeminino.isSelected()) {
-              sexo='f';
-            }else{
+                sexo = 'f';
+            } else {
                 if (jRBOutro.isSelected()) {
-                    sexo='o';
+                    sexo = 'o';
                 }
             }
         }
-        
+
         if (jRBCandidato.isSelected()) {
-            nascionalidade=jTFNacionalidade.getText();
-            proficao=jTFProfissao.getText();
-            
-            Candidato c = new Candidato(nascionalidade, proficao, nome, WIDTH, dataNascimento, WIDTH, sexo);
+            nascionalidade = jTFNacionalidade.getText();
+            proficao = jTFProfissao.getText();
+
+            c = new Candidato(nascionalidade, proficao, nome, WIDTH, dataNascimento, WIDTH, sexo);
             SCandidato.getInstance().getCandidato().add(c);
-        }else{
+        } else {
             if (jRBJurado.isSelected()) {
-                especialidade=jTFEspecialisacao.getText();
-                Jurado j = new Jurado(especialidade, nome, WIDTH, dataNascimento, WIDTH, sexo);
+                especialidade = jTFEspecialisacao.getText();
+                j = new Jurado(especialidade, nome, WIDTH, dataNascimento, WIDTH, sexo);
                 SJurado.getInstance().getCandidato().add(j);
             }
         }
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
+
+    private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_jBtnSairActionPerformed
+
+    private void jBtnCansutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCansutaActionPerformed
+        if (jRBCandidato.isSelected()) {
+            JOptionPane.showMessageDialog(this, c.toString());
+        } else {
+            if (jRBJurado.isSelected()) {
+                JOptionPane.showMessageDialog(this, j.toString());
+            }
+        }
+    }//GEN-LAST:event_jBtnCansutaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -393,6 +439,8 @@ public class JRPessoa extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCadastrar;
+    private javax.swing.JButton jBtnCansuta;
+    private javax.swing.JButton jBtnSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLblCadastro;
     private javax.swing.JLabel jLblCandidatos;

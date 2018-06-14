@@ -38,7 +38,13 @@
                           <Component id="jTFNome" alignment="0" min="-2" pref="186" max="-2" attributes="0"/>
                           <Component id="jTFDataNascimento" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                           <Component id="jTFId" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="jBtnCadastrar" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jBtnCadastrar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jBtnCansuta" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Component id="jBtnSair" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jRBMascolino" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -99,7 +105,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jRBOutro" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Component id="jBtnCadastrar" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBtnCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBtnSair" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBtnCansuta" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -358,6 +368,22 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Outros"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnSair">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sair"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnSairActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnCansuta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Consutar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnCansutaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

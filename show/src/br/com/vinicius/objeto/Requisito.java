@@ -46,7 +46,7 @@ public class Requisito {
 
     @Override
     public String toString() {
-        return "Requisito{" + "requisitos=" + requisitos + ", nota=" + nota + ", status=" + status + '}';
+        return "Requisito : " + "requisitos=" + requisitos + "\n, nota=" + nota + "\n, status=" + status ;
     }
     
     

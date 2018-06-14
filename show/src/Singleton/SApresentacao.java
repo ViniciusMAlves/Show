@@ -7,6 +7,7 @@ package Singleton;
 
 import br.com.vinicius.objeto.Apresentacao;
 import br.com.vinicius.objeto.Avaliacao;
+import br.com.vinicius.objeto.Musica;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,12 @@ import java.util.List;
  */
 public class SApresentacao {
    private List<Apresentacao> apresentacao = new ArrayList();
+   private List<Musica> musica = new ArrayList();
 
+    public List<Musica> getMusica() {
+        return musica;
+    }
+   
     public List<Apresentacao> getApresentacao() {
         return apresentacao;
     }

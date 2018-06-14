@@ -30,7 +30,7 @@ public class Jurado extends Pessoa{
 
     @Override
     public String toString() {
-        return "Jurado{" + "especialidade=" + especialidade + '}';
+        return super.toString()+ "Jurado : " + "especialidade=" + especialidade ;
     }
     
     
