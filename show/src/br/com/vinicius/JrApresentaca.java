@@ -6,27 +6,24 @@
 package br.com.vinicius;
 
 import Singleton.SApresentacao;
+import Singleton.SCandidato;
 import br.com.vinicius.objeto.Apresentacao;
 import br.com.vinicius.objeto.Candidato;
-import br.com.vinicius.objeto.Jurado;
 import br.com.vinicius.objeto.Musica;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author SATC
  */
-public class JRApresentacao extends javax.swing.JFrame {
-
-    ArrayList<Candidato> candidatos = new ArrayList();
-    Apresentacao a;
+public class JrApresentaca extends javax.swing.JFrame {
 
     /**
-     * Creates new form Apresentacao
+     * Creates new form JrApresentaca
      */
-    public JRApresentacao() {
+    public JrApresentaca() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -38,7 +35,7 @@ public class JRApresentacao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jLblApresentacoes = new javax.swing.JLabel();
         jPnlMusica = new javax.swing.JPanel();
         jLblMusica = new javax.swing.JLabel();
         jLblArtista = new javax.swing.JLabel();
@@ -59,15 +56,16 @@ public class JRApresentacao extends javax.swing.JFrame {
         jRBAdaptadaSim = new javax.swing.JRadioButton();
         jRBAdaptadaNao = new javax.swing.JRadioButton();
         jTFCodigoCandidato = new javax.swing.JTextField();
-        jLblApresentacoes = new javax.swing.JLabel();
+        jBtnLista = new javax.swing.JButton();
         jBtnCadastrar = new javax.swing.JButton();
         jBtnSair = new javax.swing.JButton();
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(0, 0, 0));
 
+        jLblApresentacoes.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLblApresentacoes.setText("Apresentações");
+
+        jPnlMusica.setBackground(new java.awt.Color(153, 0, 0));
         jPnlMusica.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 51)));
 
         jLblMusica.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -84,6 +82,12 @@ public class JRApresentacao extends javax.swing.JFrame {
 
         jLblNomeMusica.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLblNomeMusica.setText("Nome da Musica :");
+
+        jTFArtista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFArtistaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPnlMusicaLayout = new javax.swing.GroupLayout(jPnlMusica);
         jPnlMusica.setLayout(jPnlMusicaLayout);
@@ -138,9 +142,10 @@ public class JRApresentacao extends javax.swing.JFrame {
                 .addComponent(jLblTempo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTFTempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        jPnlApresentacao.setBackground(new java.awt.Color(153, 0, 0));
         jPnlApresentacao.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 51)));
 
         jLblApresentacao.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -155,12 +160,16 @@ public class JRApresentacao extends javax.swing.JFrame {
         jLblAdaptado1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLblAdaptado1.setText("Adaptado :");
 
+        jRBAltoralSim.setBackground(new java.awt.Color(153, 0, 0));
         jRBAltoralSim.setText("Sim");
 
+        jRBAltoralNao.setBackground(new java.awt.Color(153, 0, 0));
         jRBAltoralNao.setText("Não");
 
+        jRBAdaptadaSim.setBackground(new java.awt.Color(153, 0, 0));
         jRBAdaptadaSim.setText("Sim");
 
+        jRBAdaptadaNao.setBackground(new java.awt.Color(153, 0, 0));
         jRBAdaptadaNao.setText("Não");
 
         jTFCodigoCandidato.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -174,30 +183,39 @@ public class JRApresentacao extends javax.swing.JFrame {
             }
         });
 
+        jBtnLista.setText("Lista de Candidatos");
+        jBtnLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnListaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPnlApresentacaoLayout = new javax.swing.GroupLayout(jPnlApresentacao);
         jPnlApresentacao.setLayout(jPnlApresentacaoLayout);
         jPnlApresentacaoLayout.setHorizontalGroup(
             jPnlApresentacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPnlApresentacaoLayout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
-                .addComponent(jLblApresentacao)
-                .addGap(32, 32, 32))
             .addGroup(jPnlApresentacaoLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPnlApresentacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPnlApresentacaoLayout.createSequentialGroup()
-                        .addComponent(jRBAdaptadaSim)
-                        .addGap(18, 18, 18)
-                        .addComponent(jRBAdaptadaNao))
+                        .addContainerGap()
+                        .addGroup(jPnlApresentacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPnlApresentacaoLayout.createSequentialGroup()
+                                .addComponent(jRBAdaptadaSim)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRBAdaptadaNao))
+                            .addGroup(jPnlApresentacaoLayout.createSequentialGroup()
+                                .addComponent(jRBAltoralSim)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRBAltoralNao))
+                            .addComponent(jLblAltoral)
+                            .addComponent(jLblCandidato)
+                            .addComponent(jLblAdaptado1)
+                            .addComponent(jTFCodigoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBtnLista)))
                     .addGroup(jPnlApresentacaoLayout.createSequentialGroup()
-                        .addComponent(jRBAltoralSim)
-                        .addGap(18, 18, 18)
-                        .addComponent(jRBAltoralNao))
-                    .addComponent(jLblAltoral)
-                    .addComponent(jLblCandidato)
-                    .addComponent(jLblAdaptado1)
-                    .addComponent(jTFCodigoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(46, 46, 46)
+                        .addComponent(jLblApresentacao)))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPnlApresentacaoLayout.setVerticalGroup(
             jPnlApresentacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,15 +234,14 @@ public class JRApresentacao extends javax.swing.JFrame {
                 .addGroup(jPnlApresentacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRBAdaptadaSim)
                     .addComponent(jRBAdaptadaNao))
-                .addGap(13, 13, 13)
+                .addGap(31, 31, 31)
                 .addComponent(jLblCandidato)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTFCodigoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jBtnLista)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jLblApresentacoes.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLblApresentacoes.setText("Apresentações");
 
         jBtnCadastrar.setText("Cadastrar");
         jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -247,43 +264,60 @@ public class JRApresentacao extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(155, 155, 155)
+                        .addComponent(jLblApresentacoes))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jPnlMusica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPnlApresentacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jBtnCadastrar)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jBtnSair)
-                                .addGap(12, 12, 12))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(jLblApresentacoes)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                                .addGap(16, 16, 16)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLblApresentacoes)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPnlApresentacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPnlMusica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(122, 122, 122)
                         .addComponent(jBtnCadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jBtnSair)
-                        .addGap(131, 131, 131))))
+                        .addComponent(jBtnSair))
+                    .addComponent(jPnlMusica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPnlApresentacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTFArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFArtistaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFArtistaActionPerformed
+
+    private void jTFCodigoCandidatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTFCodigoCandidatoMouseClicked
+
+    }//GEN-LAST:event_jTFCodigoCandidatoMouseClicked
+
+    private void jTFCodigoCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCodigoCandidatoActionPerformed
+
+    }//GEN-LAST:event_jTFCodigoCandidatoActionPerformed
+
+    private void jBtnListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnListaActionPerformed
+        String list = " ";
+        for (Candidato cand : SCandidato.getInstance().getCandidato()) {
+            list += SCandidato.getInstance().getCandidato().indexOf(cand)+ " : "+ cand.getNome() +"\n";
+        }
+        JOptionPane.showMessageDialog(this, list);
+    }//GEN-LAST:event_jBtnListaActionPerformed
 
     private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
         String artista = jTFArtista.getText();
@@ -313,30 +347,15 @@ public class JRApresentacao extends javax.swing.JFrame {
         }
         int codigocandidato = Integer.parseInt(jTFCodigoCandidato.getText());
 
-        a = new Apresentacao(altoral, adaptado, codigocandidato);
+        Apresentacao a = new Apresentacao(altoral, adaptado ,SCandidato.getInstance().getCandidato().get(Integer.parseInt(jTFCodigoCandidato.getText())),m);
 
         SApresentacao.getInstance().getApresentacao().add(a);
         SApresentacao.getInstance().getMusica().add(m);
-
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
-
-    private void jTFCodigoCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCodigoCandidatoActionPerformed
-        
-
-
-    }//GEN-LAST:event_jTFCodigoCandidatoActionPerformed
 
     private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
         setVisible(false);
     }//GEN-LAST:event_jBtnSairActionPerformed
-
-    private void jTFCodigoCandidatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTFCodigoCandidatoMouseClicked
-        String cand = " ";
-        for (Candidato ca : candidatos) {
-           cand += candidatos.indexOf(ca) + ca.getId();
-        }
-        JOptionPane.showMessageDialog(this, cand);
-    }//GEN-LAST:event_jTFCodigoCandidatoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -355,29 +374,28 @@ public class JRApresentacao extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JRApresentacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JrApresentaca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JRApresentacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JrApresentaca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JRApresentacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JrApresentaca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JRApresentacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JrApresentaca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JRApresentacao().setVisible(true);
+                new JrApresentaca().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCadastrar;
+    private javax.swing.JButton jBtnLista;
     private javax.swing.JButton jBtnSair;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLblAdaptado1;
     private javax.swing.JLabel jLblAltoral;
     private javax.swing.JLabel jLblApresentacao;

@@ -26,6 +26,11 @@ public class SApresentacao {
     public List<Apresentacao> getApresentacao() {
         return apresentacao;
     }
+
+    @Override
+    public String toString() {
+        return "SApresentacao{" + "apresentacao=" + apresentacao + "\n, musica=" + musica + '}';
+    }
    
    
     

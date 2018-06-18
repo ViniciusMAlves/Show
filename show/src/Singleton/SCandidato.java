@@ -32,4 +32,11 @@ public class SCandidato {
 
         private static final SCandidato INSTANCE = new SCandidato();
     }
+
+    @Override
+    public String toString() {
+        return "SCandidato{" + "candidato=" + candidato + '}';
+    }
+    
+    
 }

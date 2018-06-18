@@ -19,6 +19,11 @@ public class SRequisito {
     public List<Requisito> getRequisito() {
         return requisito;
     }
+
+    @Override
+    public String toString() {
+        return "SRequisito{" + "requisito=" + requisito + '}';
+    }
     
     
     private SRequisito() {

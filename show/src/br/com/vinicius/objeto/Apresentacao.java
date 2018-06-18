@@ -12,17 +12,17 @@ package br.com.vinicius.objeto;
 public class Apresentacao {
     private Boolean autoral;
     private Boolean adaptado;
-    private float media;
     private Candidato candidato;
     private Musica musica;
 
-    public Apresentacao(Boolean autoral, Boolean adaptado, float media) {
+    public Apresentacao(Boolean autoral, Boolean adaptado, Candidato candidato, Musica musica) {
         this.autoral = autoral;
         this.adaptado = adaptado;
-        this.media = media;
-        
-        
+        this.candidato = candidato;
+        this.musica = musica;
     }
+    
+    
 
     public Boolean getAutoral() {
         return autoral;
@@ -38,14 +38,6 @@ public class Apresentacao {
 
     public void setAdaptado(Boolean adaptado) {
         this.adaptado = adaptado;
-    }
-
-    public float getMedia() {
-        return media;
-    }
-
-    public void setMedia(float media) {
-        this.media = media;
     }
 
     public Candidato getCandidato() {
@@ -64,9 +56,11 @@ public class Apresentacao {
         this.musica = musica;
     }
 
+    
+
     @Override
     public String toString() {
-        return "Apresentacao : " + "autoral=" + autoral + "\n, adaptado=" + adaptado + "\n, media=" + media + "\n, candidato=" + candidato + "\n, musica=" + musica ;
+        return "Apresentacao : " + "autoral=" + autoral + "\n, adaptado=" + adaptado +  "\n, candidato=" + candidato + "\n, musica=" + musica ;
     }
     
     

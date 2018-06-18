@@ -20,6 +20,11 @@ public class SJurado {
     public List<Jurado> getCandidato() {
         return jurado;
     }
+
+    @Override
+    public String toString() {
+        return "SJurado{" + "jurado=" + jurado + '}';
+    }
      
      
     

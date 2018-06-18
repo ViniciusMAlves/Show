@@ -16,6 +16,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -31,6 +32,7 @@ public class Menu extends javax.swing.JFrame {
         jBtnCadastrar = new javax.swing.JButton();
         jBtnRequisitos = new javax.swing.JButton();
         jBtnApresentacao = new javax.swing.JButton();
+        jBtnCunsuta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,25 +63,34 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jBtnCunsuta.setText("Cunsuta");
+        jBtnCunsuta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCunsutaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jBtnCadastrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(jBtnRequisitos)
-                .addGap(36, 36, 36))
+                .addGap(147, 147, 147)
+                .addComponent(jLblMenu)
+                .addContainerGap(165, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(jLblMenu))
+                        .addComponent(jBtnApresentacao, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(jBtnCunsuta)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(jBtnApresentacao, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jBtnCadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                        .addComponent(jBtnRequisitos)
+                        .addGap(36, 36, 36))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,8 +102,10 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBtnRequisitos, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jBtnApresentacao, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnApresentacao, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnCunsuta))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,9 +122,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnRequisitosActionPerformed
 
     private void jBtnApresentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnApresentacaoActionPerformed
-        JRApresentacao apresen = new JRApresentacao();
-        apresen.setVisible(true);
+        JrApresentaca apre = new JrApresentaca();
+        apre.setVisible(true);
     }//GEN-LAST:event_jBtnApresentacaoActionPerformed
+
+    private void jBtnCunsutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCunsutaActionPerformed
+        JRConsuta cons = new JRConsuta();
+        cons.setVisible(true);
+    }//GEN-LAST:event_jBtnCunsutaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,6 +169,7 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnApresentacao;
     private javax.swing.JButton jBtnCadastrar;
+    private javax.swing.JButton jBtnCunsuta;
     private javax.swing.JButton jBtnRequisitos;
     private javax.swing.JLabel jLblMenu;
     // End of variables declaration//GEN-END:variables
