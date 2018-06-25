@@ -18,12 +18,13 @@ public class Avaliacao {
    private List<Requisito> requisitos;
    private float mediaGeral;
 
-    public Avaliacao(Apresentacao apresentacao, float mediaGeral) {
-        this.apresentacao = apresentacao;
+    public Avaliacao(float mediaGeral) {
         this.mediaGeral = mediaGeral;
-        jurados = new ArrayList<>();
-        requisitos = new ArrayList<>(); 
+        this.jurados = new ArrayList<>();
+        this.requisitos = new ArrayList<>();
     }
+
+    
 
     public Apresentacao getApresentacao() {
         return apresentacao;
@@ -62,6 +63,6 @@ public class Avaliacao {
         return "Avaliacao : " + "apresentacao=" + apresentacao + "\n, jurados=" + jurados + "\n, requisitos=" + requisitos + "\n, media Geral=" + mediaGeral ;
     }
    
-    
+   
    
 }

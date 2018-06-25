@@ -49,5 +49,6 @@ public class Requisito {
         return "Requisito : " + "requisitos=" + requisitos + "\n, nota=" + nota + "\n, status=" + status ;
     }
     
+   
     
 }

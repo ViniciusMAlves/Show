@@ -22,7 +22,7 @@ public class SRequisito {
 
     @Override
     public String toString() {
-        return "SRequisito{" + "requisito=" + requisito + '}';
+        return "\n" + "requisito=" + requisito ;
     }
     
     

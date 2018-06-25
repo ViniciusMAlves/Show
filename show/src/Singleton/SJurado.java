@@ -23,7 +23,7 @@ public class SJurado {
 
     @Override
     public String toString() {
-        return "SJurado{" + "jurado=" + jurado + '}';
+        return "\n" + "jurado=" + jurado ;
     }
      
      

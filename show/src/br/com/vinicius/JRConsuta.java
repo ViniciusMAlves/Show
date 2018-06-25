@@ -22,6 +22,7 @@ public class JRConsuta extends javax.swing.JFrame {
      */
     public JRConsuta() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -38,12 +39,15 @@ public class JRConsuta extends javax.swing.JFrame {
         jBtnJurado = new javax.swing.JButton();
         jBtnApresentacao = new javax.swing.JButton();
         jBtnRequisitos = new javax.swing.JButton();
+        jBtnSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLblConsuta.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLblConsuta.setText("consutar");
 
+        jBtnCandidato.setBackground(new java.awt.Color(102, 102, 102));
         jBtnCandidato.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jBtnCandidato.setText("Candidato");
         jBtnCandidato.addActionListener(new java.awt.event.ActionListener() {
@@ -52,6 +56,7 @@ public class JRConsuta extends javax.swing.JFrame {
             }
         });
 
+        jBtnJurado.setBackground(new java.awt.Color(102, 102, 102));
         jBtnJurado.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jBtnJurado.setText("Jurado");
         jBtnJurado.addActionListener(new java.awt.event.ActionListener() {
@@ -60,6 +65,7 @@ public class JRConsuta extends javax.swing.JFrame {
             }
         });
 
+        jBtnApresentacao.setBackground(new java.awt.Color(102, 102, 102));
         jBtnApresentacao.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jBtnApresentacao.setText("Apresentacao");
         jBtnApresentacao.addActionListener(new java.awt.event.ActionListener() {
@@ -68,11 +74,20 @@ public class JRConsuta extends javax.swing.JFrame {
             }
         });
 
+        jBtnRequisitos.setBackground(new java.awt.Color(102, 102, 102));
         jBtnRequisitos.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jBtnRequisitos.setText("Requisitos");
         jBtnRequisitos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnRequisitosActionPerformed(evt);
+            }
+        });
+
+        jBtnSair.setBackground(new java.awt.Color(102, 102, 102));
+        jBtnSair.setText("Sair");
+        jBtnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSairActionPerformed(evt);
             }
         });
 
@@ -88,11 +103,14 @@ public class JRConsuta extends javax.swing.JFrame {
                             .addComponent(jBtnCandidato)
                             .addComponent(jBtnJurado)
                             .addComponent(jBtnApresentacao)
-                            .addComponent(jBtnRequisitos)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jBtnRequisitos)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                                .addComponent(jBtnSair))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(97, 97, 97)
                         .addComponent(jLblConsuta)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,6 +126,10 @@ public class JRConsuta extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jBtnRequisitos)
                 .addContainerGap(32, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBtnSair)
+                .addContainerGap())
         );
 
         pack();
@@ -128,6 +150,10 @@ public class JRConsuta extends javax.swing.JFrame {
     private void jBtnRequisitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRequisitosActionPerformed
         JOptionPane.showMessageDialog(this, SRequisito.getInstance().toString()); 
     }//GEN-LAST:event_jBtnRequisitosActionPerformed
+
+    private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_jBtnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,6 +195,7 @@ public class JRConsuta extends javax.swing.JFrame {
     private javax.swing.JButton jBtnCandidato;
     private javax.swing.JButton jBtnJurado;
     private javax.swing.JButton jBtnRequisitos;
+    private javax.swing.JButton jBtnSair;
     private javax.swing.JLabel jLblConsuta;
     // End of variables declaration//GEN-END:variables
 }

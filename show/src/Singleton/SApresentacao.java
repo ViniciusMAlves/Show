@@ -6,7 +6,6 @@
 package Singleton;
 
 import br.com.vinicius.objeto.Apresentacao;
-import br.com.vinicius.objeto.Avaliacao;
 import br.com.vinicius.objeto.Musica;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +28,7 @@ public class SApresentacao {
 
     @Override
     public String toString() {
-        return "SApresentacao{" + "apresentacao=" + apresentacao + "\n, musica=" + musica + '}';
+        return "\n" + "apresentacao=" + apresentacao + "\n, musica=" + musica ;
     }
    
    

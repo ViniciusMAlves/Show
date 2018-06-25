@@ -61,6 +61,7 @@ public class JrApresentaca extends javax.swing.JFrame {
         jBtnSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLblApresentacoes.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLblApresentacoes.setText("Apresentações");
@@ -183,6 +184,7 @@ public class JrApresentaca extends javax.swing.JFrame {
             }
         });
 
+        jBtnLista.setBackground(new java.awt.Color(102, 102, 102));
         jBtnLista.setText("Lista de Candidatos");
         jBtnLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,6 +245,7 @@ public class JrApresentaca extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jBtnCadastrar.setBackground(new java.awt.Color(102, 102, 102));
         jBtnCadastrar.setText("Cadastrar");
         jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -250,6 +253,7 @@ public class JrApresentaca extends javax.swing.JFrame {
             }
         });
 
+        jBtnSair.setBackground(new java.awt.Color(102, 102, 102));
         jBtnSair.setText("Sair");
         jBtnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

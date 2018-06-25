@@ -35,11 +35,15 @@ public class Menu extends javax.swing.JFrame {
         jBtnCunsuta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menu");
+        setBackground(new java.awt.Color(0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLblMenu.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLblMenu.setText("Menu");
 
-        jBtnCadastrar.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jBtnCadastrar.setBackground(new java.awt.Color(102, 102, 102));
+        jBtnCadastrar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jBtnCadastrar.setText("Cadastrar");
         jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,7 +51,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jBtnRequisitos.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jBtnRequisitos.setBackground(new java.awt.Color(102, 102, 102));
+        jBtnRequisitos.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jBtnRequisitos.setText("Requisitos");
         jBtnRequisitos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,7 +60,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jBtnApresentacao.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jBtnApresentacao.setBackground(new java.awt.Color(102, 102, 102));
+        jBtnApresentacao.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jBtnApresentacao.setText("Apresentação");
         jBtnApresentacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +69,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jBtnCunsuta.setBackground(new java.awt.Color(102, 102, 102));
+        jBtnCunsuta.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jBtnCunsuta.setText("Cunsuta");
         jBtnCunsuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,22 +83,20 @@ public class Menu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addComponent(jLblMenu)
-                .addContainerGap(165, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBtnApresentacao, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58)
-                        .addComponent(jBtnCunsuta)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(147, 147, 147)
+                        .addComponent(jLblMenu))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBtnCadastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                        .addComponent(jBtnRequisitos)
-                        .addGap(36, 36, 36))))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jBtnApresentacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBtnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jBtnCunsuta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBtnRequisitos, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,13 +105,13 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLblMenu)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnRequisitos, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(jBtnRequisitos, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnApresentacao, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnCunsuta))
-                .addContainerGap(77, Short.MAX_VALUE))
+                    .addComponent(jBtnCunsuta, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         pack();

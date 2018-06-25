@@ -5,6 +5,7 @@
  */
 package br.com.vinicius;
 
+import Singleton.SAvaliacao;
 import Singleton.SCandidato;
 import Singleton.SJurado;
 import br.com.vinicius.objeto.Avaliacao;
@@ -12,6 +13,7 @@ import br.com.vinicius.objeto.Candidato;
 import br.com.vinicius.objeto.Jurado;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +27,7 @@ import javax.swing.JOptionPane;
 public class JRPessoa extends javax.swing.JFrame {
 
     SimpleDateFormat sdp = new SimpleDateFormat("dd/MM/yyyy");
-    
+    ArrayList<Avaliacao> Aval = new ArrayList<>();
     
 
     void desabilitarJurado() {
@@ -101,6 +103,7 @@ public class JRPessoa extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(8, 8, 63));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLblCadastro.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLblCadastro.setText("Cadastro");
@@ -218,6 +221,7 @@ public class JRPessoa extends javax.swing.JFrame {
         jLblDataNascimento2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLblDataNascimento2.setText("Data de Nascimento :");
 
+        jBtnCadastrar.setBackground(new java.awt.Color(102, 102, 102));
         jBtnCadastrar.setText("Cadastrar");
         jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,6 +235,7 @@ public class JRPessoa extends javax.swing.JFrame {
 
         jRBOutro.setText("Outros");
 
+        jBtnSair.setBackground(new java.awt.Color(102, 102, 102));
         jBtnSair.setText("Sair");
         jBtnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -380,8 +385,15 @@ public class JRPessoa extends javax.swing.JFrame {
                 Jurado j = new Jurado(especialidade, nome, WIDTH, dataNascimento, WIDTH, sexo);
                 SJurado.getInstance().getCandidato().add(j);
                 
-              
+                
+                for (Avaliacao a : Aval) {
+                  a.getJurados().add(j);
+                  SAvaliacao.getInstance().getAvaliacao().add(a);
+                }
+                
+                
             }
+            
         }
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
 

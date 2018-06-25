@@ -35,7 +35,7 @@ public class SCandidato {
 
     @Override
     public String toString() {
-        return "SCandidato{" + "candidato=" + candidato + '}';
+        return "\n" + "candidato=" + candidato ;
     }
     
     

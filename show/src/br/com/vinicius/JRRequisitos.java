@@ -5,9 +5,11 @@
  */
 package br.com.vinicius;
 
+import Singleton.SAvaliacao;
 import Singleton.SRequisito;
 import br.com.vinicius.objeto.Avaliacao;
 import br.com.vinicius.objeto.Requisito;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,7 +17,9 @@ import javax.swing.JOptionPane;
  * @author SATC
  */
 public class JRRequisitos extends javax.swing.JFrame {
-
+    ArrayList<Avaliacao> aval = new ArrayList<>();
+    ArrayList<Requisito> not = new ArrayList<>();
+    
     /**
      * Creates new form requisitos
      */
@@ -44,6 +48,8 @@ public class JRRequisitos extends javax.swing.JFrame {
         jBtnSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLblRequisitos.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLblRequisitos.setText("Requisitos");
@@ -57,6 +63,7 @@ public class JRRequisitos extends javax.swing.JFrame {
         jLblStatus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLblStatus.setText("Status :");
 
+        jBtnCadastrar.setBackground(new java.awt.Color(102, 102, 102));
         jBtnCadastrar.setText("Cadastrar");
         jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +71,7 @@ public class JRRequisitos extends javax.swing.JFrame {
             }
         });
 
+        jBtnSair.setBackground(new java.awt.Color(102, 102, 102));
         jBtnSair.setText("Sair");
         jBtnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,10 +139,27 @@ public class JRRequisitos extends javax.swing.JFrame {
         int nota = Integer.parseInt(jTFNota.getText());
         char status = jTFStatus.getText().charAt(0);
         
+        
+        
         Requisito r = new Requisito(requisitos, nota, status);
         SRequisito.getInstance().getRequisito().add(r);
         
-       
+        for (Avaliacao a : aval) {
+            a.getRequisitos().add(r);
+            
+            SAvaliacao.getInstance().getAvaliacao().add(a);
+            
+        }
+        /*not.add(r.getNota());
+        
+        int media=0;
+        float med=0 ;
+        for (Requisito n : not) {
+          media += n.getNota();
+          med = media/not.size();
+        }
+        Avaliacao av = new Avaliacao( med);
+        SAvaliacao.getInstance().getAvaliacao().add(av);*/
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
 
     private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
