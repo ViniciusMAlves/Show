@@ -70,7 +70,7 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa : " + "nome=" + nome + "\n, id=" + id + "\n, dataNascimento=" + dataNascimento + "\n, idade=" + idade + "\n, sexo=" + sexo +"\n";
+        return "\n " + "nome=" + nome + "\n, id=" + id + "\n, dataNascimento=" + dataNascimento + "\n, idade=" + idade + "\n, sexo=" + sexo +"\n";
     }
     
     public static int calculoIdade(java.util.Date dataNasc ){

@@ -5,11 +5,14 @@
  */
 package br.com.vinicius;
 
-import Singleton.SApresentacao;
+import Singleton.SAvaliacao;
 import Singleton.SCandidato;
 import br.com.vinicius.objeto.Apresentacao;
+import br.com.vinicius.objeto.Avaliacao;
 import br.com.vinicius.objeto.Candidato;
 import br.com.vinicius.objeto.Musica;
+import br.com.vinicius.objeto.Requisito;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,7 +20,7 @@ import javax.swing.JOptionPane;
  * @author SATC
  */
 public class JrApresentaca extends javax.swing.JFrame {
-
+   ArrayList<Avaliacao> aval = new ArrayList<>();
     /**
      * Creates new form JrApresentaca
      */
@@ -59,6 +62,14 @@ public class JrApresentaca extends javax.swing.JFrame {
         jBtnLista = new javax.swing.JButton();
         jBtnCadastrar = new javax.swing.JButton();
         jBtnSair = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLblRequisitos = new javax.swing.JLabel();
+        jLblRequisito = new javax.swing.JLabel();
+        jTFRequisito = new javax.swing.JTextField();
+        jLblNota = new javax.swing.JLabel();
+        jTFNota = new javax.swing.JTextField();
+        jLblStatus = new javax.swing.JLabel();
+        jTFStatus = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -261,6 +272,77 @@ public class JrApresentaca extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
+
+        jLblRequisitos.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLblRequisitos.setText("Requisitos");
+
+        jLblRequisito.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblRequisito.setText("Requisito :");
+
+        jTFRequisito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFRequisitoActionPerformed(evt);
+            }
+        });
+
+        jLblNota.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblNota.setText("Nota :");
+
+        jTFNota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFNotaActionPerformed(evt);
+            }
+        });
+
+        jLblStatus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblStatus.setText("Status :");
+
+        jTFStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFStatusActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLblRequisitos)
+                .addGap(48, 48, 48))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLblRequisito)
+                    .addComponent(jTFRequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLblNota)
+                    .addComponent(jTFNota, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLblStatus)
+                    .addComponent(jTFStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLblRequisitos)
+                .addGap(18, 18, 18)
+                .addComponent(jLblRequisito)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFRequisito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLblNota)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLblStatus)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -268,20 +350,23 @@ public class JrApresentaca extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(jLblApresentacoes))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPnlMusica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPnlApresentacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jBtnCadastrar)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBtnCadastrar)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jBtnSair)
-                                .addGap(16, 16, 16)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jBtnSair)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLblApresentacoes)
+                .addGap(251, 251, 251))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,14 +375,15 @@ public class JrApresentaca extends javax.swing.JFrame {
                 .addComponent(jLblApresentacoes)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jBtnCadastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jBtnSair))
-                    .addComponent(jPnlMusica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPnlApresentacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPnlMusica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPnlApresentacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnCadastrar)
+                    .addComponent(jBtnSair))
+                .addGap(28, 28, 28))
         );
 
         pack();
@@ -353,13 +439,39 @@ public class JrApresentaca extends javax.swing.JFrame {
 
         Apresentacao a = new Apresentacao(altoral, adaptado ,SCandidato.getInstance().getCandidato().get(Integer.parseInt(jTFCodigoCandidato.getText())),m);
 
-        SApresentacao.getInstance().getApresentacao().add(a);
-        SApresentacao.getInstance().getMusica().add(m);
+        String requisitos = jTFRequisito.getText();
+        int nota = Integer.parseInt(jTFNota.getText());
+        char status = jTFStatus.getText().charAt(0);
+        
+        
+        
+        Requisito r = new Requisito(requisitos, nota, status);
+        
+        for (Avaliacao avali : aval) {
+            avali.getRequisitos().add(r);
+        }
+       
+        
+        
+        Avaliacao ava = new Avaliacao(a, tempo);
+        SAvaliacao.getInstance().getAvaliacao().add(ava);
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
 
     private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
         setVisible(false);
     }//GEN-LAST:event_jBtnSairActionPerformed
+
+    private void jTFRequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFRequisitoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFRequisitoActionPerformed
+
+    private void jTFNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNotaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFNotaActionPerformed
+
+    private void jTFStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFStatusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -409,7 +521,12 @@ public class JrApresentaca extends javax.swing.JFrame {
     private javax.swing.JLabel jLblGenero;
     private javax.swing.JLabel jLblMusica;
     private javax.swing.JLabel jLblNomeMusica;
+    private javax.swing.JLabel jLblNota;
+    private javax.swing.JLabel jLblRequisito;
+    private javax.swing.JLabel jLblRequisitos;
+    private javax.swing.JLabel jLblStatus;
     private javax.swing.JLabel jLblTempo;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPnlApresentacao;
     private javax.swing.JPanel jPnlMusica;
     private javax.swing.JRadioButton jRBAdaptadaNao;
@@ -420,6 +537,9 @@ public class JrApresentaca extends javax.swing.JFrame {
     private javax.swing.JTextField jTFCodigoCandidato;
     private javax.swing.JTextField jTFGenero;
     private javax.swing.JTextField jTFNomeMusica;
+    private javax.swing.JTextField jTFNota;
+    private javax.swing.JTextField jTFRequisito;
+    private javax.swing.JTextField jTFStatus;
     private javax.swing.JTextField jTFTempo;
     // End of variables declaration//GEN-END:variables
 }

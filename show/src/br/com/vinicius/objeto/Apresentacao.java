@@ -60,7 +60,7 @@ public class Apresentacao {
 
     @Override
     public String toString() {
-        return "Apresentacao : " + "autoral=" + autoral + "\n, adaptado=" + adaptado +  "\n, candidato=" + candidato + "\n, musica=" + musica ;
+        return "Apresentacao : " + "autoral=" + autoral + "\n, adaptado=" + adaptado +  "\n, candidato=" + candidato + "\n" + musica ;
     }
     
     

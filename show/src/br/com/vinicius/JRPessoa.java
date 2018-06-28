@@ -74,39 +74,45 @@ public class JRPessoa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLblCadastro = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jRBMascolino = new javax.swing.JRadioButton();
+        jLblNome = new javax.swing.JLabel();
         jPnlCadidato = new javax.swing.JPanel();
         jLblCandidatos = new javax.swing.JLabel();
         jLblNacionalidade = new javax.swing.JLabel();
         jTFNacionalidade = new javax.swing.JTextField();
         jLblProfissao = new javax.swing.JLabel();
         jTFProfissao = new javax.swing.JTextField();
+        jTFDataNascimento = new javax.swing.JTextField();
+        jBtnSair = new javax.swing.JButton();
+        jBtnCadastrar = new javax.swing.JButton();
+        jLblId = new javax.swing.JLabel();
+        jLblSexo = new javax.swing.JLabel();
+        jTFNome = new javax.swing.JTextField();
         jPnlJurados = new javax.swing.JPanel();
         jLblJurados = new javax.swing.JLabel();
         jLblEspecialidade = new javax.swing.JLabel();
         jTFEspecialisacao = new javax.swing.JTextField();
-        jRBCandidato = new javax.swing.JRadioButton();
-        jRBJurado = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLblNome = new javax.swing.JLabel();
-        jLblId = new javax.swing.JLabel();
-        jLblSexo = new javax.swing.JLabel();
-        jTFNome = new javax.swing.JTextField();
         jLblDataNascimento2 = new javax.swing.JLabel();
         jTFId = new javax.swing.JTextField();
-        jTFDataNascimento = new javax.swing.JTextField();
-        jBtnCadastrar = new javax.swing.JButton();
-        jRBMascolino = new javax.swing.JRadioButton();
+        jRBJurado = new javax.swing.JRadioButton();
         jRBfeminino = new javax.swing.JRadioButton();
+        jLblCadastro = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jRBCandidato = new javax.swing.JRadioButton();
         jRBOutro = new javax.swing.JRadioButton();
-        jBtnSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(8, 8, 63));
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLblCadastro.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLblCadastro.setText("Cadastro");
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+
+        jRBMascolino.setBackground(new java.awt.Color(102, 102, 102));
+        jRBMascolino.setText("Mascolino");
+
+        jLblNome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblNome.setText("Nome :");
 
         jPnlCadidato.setBackground(new java.awt.Color(153, 0, 0));
         jPnlCadidato.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 51)));
@@ -155,6 +161,28 @@ public class JRPessoa extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jBtnSair.setBackground(new java.awt.Color(102, 102, 102));
+        jBtnSair.setText("Sair");
+        jBtnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSairActionPerformed(evt);
+            }
+        });
+
+        jBtnCadastrar.setBackground(new java.awt.Color(102, 102, 102));
+        jBtnCadastrar.setText("Cadastrar");
+        jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCadastrarActionPerformed(evt);
+            }
+        });
+
+        jLblId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblId.setText("Codigo :");
+
+        jLblSexo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblSexo.setText("Sexo :");
+
         jPnlJurados.setBackground(new java.awt.Color(153, 0, 0));
         jPnlJurados.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 51)));
 
@@ -178,7 +206,7 @@ public class JRPessoa extends javax.swing.JFrame {
                     .addGroup(jPnlJuradosLayout.createSequentialGroup()
                         .addGap(81, 81, 81)
                         .addComponent(jLblJurados)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         jPnlJuradosLayout.setVerticalGroup(
             jPnlJuradosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,13 +220,10 @@ public class JRPessoa extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
-        jRBCandidato.setText("Candidato");
-        jRBCandidato.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRBCandidatoActionPerformed(evt);
-            }
-        });
+        jLblDataNascimento2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblDataNascimento2.setText("Data de Nascimento :");
 
+        jRBJurado.setBackground(new java.awt.Color(102, 102, 102));
         jRBJurado.setText("Jurado");
         jRBJurado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,101 +231,86 @@ public class JRPessoa extends javax.swing.JFrame {
             }
         });
 
+        jRBfeminino.setBackground(new java.awt.Color(102, 102, 102));
+        jRBfeminino.setText("Feminino");
+
+        jLblCadastro.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLblCadastro.setText("Cadastro");
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Você é :");
 
-        jLblNome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLblNome.setText("Nome :");
-
-        jLblId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLblId.setText("Codigo :");
-
-        jLblSexo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLblSexo.setText("Sexo :");
-
-        jLblDataNascimento2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLblDataNascimento2.setText("Data de Nascimento :");
-
-        jBtnCadastrar.setBackground(new java.awt.Color(102, 102, 102));
-        jBtnCadastrar.setText("Cadastrar");
-        jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        jRBCandidato.setBackground(new java.awt.Color(102, 102, 102));
+        jRBCandidato.setText("Candidato");
+        jRBCandidato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnCadastrarActionPerformed(evt);
+                jRBCandidatoActionPerformed(evt);
             }
         });
 
-        jRBMascolino.setText("Mascolino");
-
-        jRBfeminino.setText("Feminino");
-
+        jRBOutro.setBackground(new java.awt.Color(102, 102, 102));
         jRBOutro.setText("Outros");
 
-        jBtnSair.setBackground(new java.awt.Color(102, 102, 102));
-        jBtnSair.setText("Sair");
-        jBtnSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnSairActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jBtnCadastrar)
+                        .addGap(44, 44, 44)
+                        .addComponent(jBtnSair))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jRBOutro))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRBJurado)
-                            .addComponent(jRBCandidato)
+                            .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
                             .addComponent(jLblNome)
                             .addComponent(jLblId)
-                            .addComponent(jLblSexo)
+                            .addComponent(jRBCandidato))
+                        .addGap(62, 62, 62)
+                        .addComponent(jPnlCadidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTFId, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLblDataNascimento2)
                             .addComponent(jTFDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTFId, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jRBMascolino)
                                 .addGap(18, 18, 18)
                                 .addComponent(jRBfeminino))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jBtnCadastrar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jBtnSair))
-                                .addComponent(jTFNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
-                        .addComponent(jLblCadastro))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(jRBOutro)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPnlCadidato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPnlJurados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLblSexo))
+                        .addGap(92, 92, 92)
+                        .addComponent(jPnlJurados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(jLblCadastro)))
                 .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLblCadastro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRBCandidato)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(3, 3, 3)
                         .addComponent(jRBJurado)
                         .addGap(27, 27, 27)
                         .addComponent(jLblNome)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLblId)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTFId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -311,40 +321,41 @@ public class JRPessoa extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLblSexo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRBMascolino)
-                            .addComponent(jRBfeminino))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRBOutro)
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jBtnCadastrar)
-                            .addComponent(jBtnSair)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                            .addComponent(jRBfeminino)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLblCadastro)
+                        .addGap(27, 27, 27)
                         .addComponent(jPnlCadidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                         .addComponent(jPnlJurados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 23, 23))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRBOutro)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnCadastrar)
+                    .addComponent(jBtnSair))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRBCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBCandidatoActionPerformed
-        if (jRBJurado.isSelected()) {
-            desabilitarJurado();
-        }
-        abilitarCandidato();
-    }//GEN-LAST:event_jRBCandidatoActionPerformed
-
-    private void jRBJuradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBJuradoActionPerformed
-        if (jRBCandidato.isSelected()) {
-            desabilitarCandidato();
-        }
-        abilitarJurado();
-
-    }//GEN-LAST:event_jRBJuradoActionPerformed
+    private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_jBtnSairActionPerformed
 
     private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
         String nome, nascionalidade, proficao, especialidade;
@@ -384,22 +395,30 @@ public class JRPessoa extends javax.swing.JFrame {
                 especialidade = jTFEspecialisacao.getText();
                 Jurado j = new Jurado(especialidade, nome, WIDTH, dataNascimento, WIDTH, sexo);
                 SJurado.getInstance().getCandidato().add(j);
-                
-                
+
                 for (Avaliacao a : Aval) {
-                  a.getJurados().add(j);
-                  SAvaliacao.getInstance().getAvaliacao().add(a);
+                    a.getJurados().add(j);
+
                 }
-                
-                
+
             }
-            
+
         }
     }//GEN-LAST:event_jBtnCadastrarActionPerformed
 
-    private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
-        setVisible(false);
-    }//GEN-LAST:event_jBtnSairActionPerformed
+    private void jRBJuradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBJuradoActionPerformed
+        if (jRBCandidato.isSelected()) {
+            desabilitarCandidato();
+        }
+        abilitarJurado();
+    }//GEN-LAST:event_jRBJuradoActionPerformed
+
+    private void jRBCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBCandidatoActionPerformed
+        if (jRBJurado.isSelected()) {
+            desabilitarJurado();
+        }
+        abilitarCandidato();
+    }//GEN-LAST:event_jRBCandidatoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -451,6 +470,7 @@ public class JRPessoa extends javax.swing.JFrame {
     private javax.swing.JLabel jLblNome;
     private javax.swing.JLabel jLblProfissao;
     private javax.swing.JLabel jLblSexo;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPnlCadidato;
     private javax.swing.JPanel jPnlJurados;
     private javax.swing.JRadioButton jRBCandidato;

@@ -18,11 +18,12 @@ public class Avaliacao {
    private List<Requisito> requisitos;
    private float mediaGeral;
 
-    public Avaliacao(float mediaGeral) {
+    public Avaliacao(Apresentacao apresentacao, float mediaGeral) {
+        this.apresentacao = apresentacao;
         this.mediaGeral = mediaGeral;
-        this.jurados = new ArrayList<>();
-        this.requisitos = new ArrayList<>();
     }
+
+    
 
     
 
@@ -60,7 +61,7 @@ public class Avaliacao {
 
     @Override
     public String toString() {
-        return "Avaliacao : " + "apresentacao=" + apresentacao + "\n, jurados=" + jurados + "\n, requisitos=" + requisitos + "\n, media Geral=" + mediaGeral ;
+        return "Avaliacao : " + "apresentacao=" + apresentacao + "\n" + jurados + "\n" + requisitos + "\n, media Geral=" + mediaGeral ;
     }
    
    

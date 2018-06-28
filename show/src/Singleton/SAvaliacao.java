@@ -20,6 +20,11 @@ public class SAvaliacao {
         return avaliacao;
     }
 
+    @Override
+    public String toString() {
+        return "SAvaliacao{" + "avaliacao=" + avaliacao + '}';
+    }
+
     
     
     
