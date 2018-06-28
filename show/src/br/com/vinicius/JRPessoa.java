@@ -5,7 +5,6 @@
  */
 package br.com.vinicius;
 
-import Singleton.SAvaliacao;
 import Singleton.SCandidato;
 import Singleton.SJurado;
 import br.com.vinicius.objeto.Avaliacao;
@@ -17,8 +16,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.scene.chart.PieChart.Data;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -106,24 +103,29 @@ public class JRPessoa extends javax.swing.JFrame {
         setBackground(new java.awt.Color(8, 8, 63));
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 51));
 
-        jRBMascolino.setBackground(new java.awt.Color(102, 102, 102));
+        jRBMascolino.setBackground(new java.awt.Color(0, 0, 51));
+        jRBMascolino.setForeground(new java.awt.Color(255, 255, 255));
         jRBMascolino.setText("Mascolino");
 
         jLblNome.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblNome.setForeground(new java.awt.Color(255, 255, 255));
         jLblNome.setText("Nome :");
 
-        jPnlCadidato.setBackground(new java.awt.Color(153, 0, 0));
+        jPnlCadidato.setBackground(new java.awt.Color(51, 0, 0));
         jPnlCadidato.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 51)));
 
         jLblCandidatos.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLblCandidatos.setForeground(new java.awt.Color(255, 255, 255));
         jLblCandidatos.setText("Candidatos");
 
         jLblNacionalidade.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblNacionalidade.setForeground(new java.awt.Color(255, 255, 255));
         jLblNacionalidade.setText("Nacionalidade :");
 
         jLblProfissao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblProfissao.setForeground(new java.awt.Color(255, 255, 255));
         jLblProfissao.setText("Profissão :");
 
         javax.swing.GroupLayout jPnlCadidatoLayout = new javax.swing.GroupLayout(jPnlCadidato);
@@ -178,18 +180,22 @@ public class JRPessoa extends javax.swing.JFrame {
         });
 
         jLblId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblId.setForeground(new java.awt.Color(255, 255, 255));
         jLblId.setText("Codigo :");
 
         jLblSexo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblSexo.setForeground(new java.awt.Color(255, 255, 255));
         jLblSexo.setText("Sexo :");
 
-        jPnlJurados.setBackground(new java.awt.Color(153, 0, 0));
+        jPnlJurados.setBackground(new java.awt.Color(51, 0, 0));
         jPnlJurados.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 51, 51)));
 
         jLblJurados.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLblJurados.setForeground(new java.awt.Color(255, 255, 255));
         jLblJurados.setText("Jurados");
 
         jLblEspecialidade.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblEspecialidade.setForeground(new java.awt.Color(255, 255, 255));
         jLblEspecialidade.setText("Especialisação :");
 
         javax.swing.GroupLayout jPnlJuradosLayout = new javax.swing.GroupLayout(jPnlJurados);
@@ -221,9 +227,11 @@ public class JRPessoa extends javax.swing.JFrame {
         );
 
         jLblDataNascimento2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLblDataNascimento2.setForeground(new java.awt.Color(255, 255, 255));
         jLblDataNascimento2.setText("Data de Nascimento :");
 
-        jRBJurado.setBackground(new java.awt.Color(102, 102, 102));
+        jRBJurado.setBackground(new java.awt.Color(0, 0, 51));
+        jRBJurado.setForeground(new java.awt.Color(255, 255, 255));
         jRBJurado.setText("Jurado");
         jRBJurado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,16 +239,20 @@ public class JRPessoa extends javax.swing.JFrame {
             }
         });
 
-        jRBfeminino.setBackground(new java.awt.Color(102, 102, 102));
+        jRBfeminino.setBackground(new java.awt.Color(0, 0, 51));
+        jRBfeminino.setForeground(new java.awt.Color(255, 255, 255));
         jRBfeminino.setText("Feminino");
 
         jLblCadastro.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLblCadastro.setForeground(new java.awt.Color(255, 255, 255));
         jLblCadastro.setText("Cadastro");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Você é :");
 
-        jRBCandidato.setBackground(new java.awt.Color(102, 102, 102));
+        jRBCandidato.setBackground(new java.awt.Color(0, 0, 51));
+        jRBCandidato.setForeground(new java.awt.Color(255, 255, 255));
         jRBCandidato.setText("Candidato");
         jRBCandidato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,7 +260,8 @@ public class JRPessoa extends javax.swing.JFrame {
             }
         });
 
-        jRBOutro.setBackground(new java.awt.Color(102, 102, 102));
+        jRBOutro.setBackground(new java.awt.Color(0, 0, 51));
+        jRBOutro.setForeground(new java.awt.Color(255, 255, 255));
         jRBOutro.setText("Outros");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -388,18 +401,15 @@ public class JRPessoa extends javax.swing.JFrame {
             nascionalidade = jTFNacionalidade.getText();
             proficao = jTFProfissao.getText();
 
-            Candidato c = new Candidato(nascionalidade, proficao, nome, WIDTH, dataNascimento, WIDTH, sexo);
+            Candidato c = new Candidato(nascionalidade, proficao, nome, codigo, dataNascimento, WIDTH, sexo);
             SCandidato.getInstance().getCandidato().add(c);
         } else {
             if (jRBJurado.isSelected()) {
                 especialidade = jTFEspecialisacao.getText();
-                Jurado j = new Jurado(especialidade, nome, WIDTH, dataNascimento, WIDTH, sexo);
+                Jurado j = new Jurado(especialidade, nome, codigo, dataNascimento, WIDTH, sexo);
                 SJurado.getInstance().getCandidato().add(j);
 
-                for (Avaliacao a : Aval) {
-                    a.getJurados().add(j);
-
-                }
+                
 
             }
 
